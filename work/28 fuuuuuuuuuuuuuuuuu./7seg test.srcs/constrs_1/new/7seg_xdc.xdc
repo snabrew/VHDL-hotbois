@@ -5,6 +5,10 @@ set_property PACKAGE_PIN W5 [get_ports clk]
 #timing indicator
 set_property PACKAGE_PIN V7 [get_ports {ind}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {ind}]
+
+#sw 
+set_property PACKAGE_PIN V17 [get_ports {sw}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {sw}]
 #seven-segment LED display
         set_property PACKAGE_PIN W7 [get_ports {LED_out[6]}]                    
             set_property IOSTANDARD LVCMOS33 [get_ports {LED_out[6]}]

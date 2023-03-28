@@ -9,7 +9,8 @@ entity seven_segment_display_VHDL is
     Port (clk : in std_logic;
            LED_out : out STD_LOGIC_VECTOR (6 downto 0);
            anode_out : out std_logic_vector(3 downto 0);
-           ind : out std_logic);
+           ind : out std_logic;
+           sw : in std_logic);
            --reeee : out std_logic_vector(19 downto 0));-- Cathode patterns of 7-segment display
 end seven_segment_display_VHDL;
 
@@ -26,11 +27,14 @@ signal disp : std_logic_vector (15 downto 0);
 
 begin
 
-process
-variable int : integer := 235;
+process(sw)
+variable int : integer := 9;
 variable x,y : integer := 0;
 variable flag : std_logic := '0';
 begin
+if sw = '1' then
+int := int + 1;
+end if;
 
 if int > 100 then
 for n in 0 to 3 loop
