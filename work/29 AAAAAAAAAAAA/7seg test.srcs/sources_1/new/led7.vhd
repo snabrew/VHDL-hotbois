@@ -77,6 +77,7 @@ end if;
 if rising_edge(subclk) and work (8 downto 0) = "000000000" and start = '0'   then
 disp <= "0000" & x & y & z;
 done := '1';
+ind <= done;
 end if;
 
 
@@ -103,10 +104,10 @@ subclk <= ref(24);
 process(disp)
 begin
 case sel is
- when "00" => anode <= "1110"; LED_BCD <= disp(3 downto 0); ind <= '1';
- when "01" => anode <= "1101"; LED_BCD <= disp(7 downto 4); ind <= '0';
- when "10" => anode <= "1011"; LED_BCD <= disp(11 downto 8); ind <= '1';
- when "11" => anode <= "0111"; LED_BCD <= disp(15 downto 12); ind <= '1';
+ when "00" => anode <= "1110"; LED_BCD <= disp(3 downto 0);-- ind <= '1';
+ when "01" => anode <= "1101"; LED_BCD <= disp(7 downto 4);-- ind <= '0';
+ when "10" => anode <= "1011"; LED_BCD <= disp(11 downto 8);-- ind <= '1';
+ when "11" => anode <= "0111"; LED_BCD <= disp(15 downto 12);-- ind <= '1';
  when others => null;
  end case;
  anode_out <= anode; --change later
