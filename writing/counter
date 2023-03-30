@@ -1,0 +1,11 @@
+process (clk)
+    variable REG : unsigned(10 downto 0) := "01111111111";
+begin
+if rising_edge(clk) then
+    REG := REG + 1; -- this happens immediately
+end if;
+ref <= std_logic_vector(REG);¥
+end process;
+
+sel <= ref (10 downto 9);
+subclk <= ref(9);
