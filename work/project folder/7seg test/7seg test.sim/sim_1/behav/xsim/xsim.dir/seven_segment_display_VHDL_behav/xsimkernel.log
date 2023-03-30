@@ -1,7 +1,0 @@
-Running: xsim.dir/seven_segment_display_VHDL_behav/xsimk.exe -simmode gui -wdb seven_segment_display_VHDL_behav.wdb -simrunnum 0 -socket 51874
-Design successfully loaded
-Design Loading Memory Usage: 6388 KB (Peak: 6388 KB)
-Design Loading CPU Usage: 31 ms
-Simulation completed
-Simulation Memory Usage: 6872 KB (Peak: 6872 KB)
-Simulation CPU Usage: 77 ms
